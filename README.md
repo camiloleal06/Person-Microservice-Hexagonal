@@ -4,8 +4,8 @@ Estado del código
 
 [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=camiloleal06_Person-Microservice)](https://sonarcloud.io/summary/new_code?id=camiloleal06_Person-Microservice)   
 <center>
-
-[![BCH compliance](https://bettercodehub.com/edge/badge/camiloleal06/Person-Microservice?branch=master)](https://bettercodehub.com/)
+[![BCH compliance](https://bettercodehub.com/edge/badge/camiloleal06/Person-Microservice-Hexagonal?branch=master)](https://bettercodehub.com/)
+   
 [![Build Status](https://app.travis-ci.com/camiloleal06/Person-Microservice.svg?branch=master)](https://app.travis-ci.com/camiloleal06/Person-Microservice)
    [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=camiloleal06_Person-Microservice&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=camiloleal06_Person-Microservice)
 

@@ -20,7 +20,7 @@ Estado del código
 
 ⚙️ Instalación del proyecto
 Clonar el repositorio en tu equipo:
-<code>git clone https://github.com/camiloleal06/Person-Microservice</code>
+<code>git clone https://github.com/camiloleal06/Person-Microservice-Hexagonal.git</code>
 
 🚀Puerto de Entrada. <code>Person-Microservice/src/main/java/org/camiloleal/ports/PersonInterface</code>
 

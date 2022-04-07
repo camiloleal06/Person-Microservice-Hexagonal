@@ -44,8 +44,8 @@ class PersonPersistenceMysqlTest {
 
     @Test
     void getPersonByEmail() {
-        assertNotNull(personRepository.findByEmail("camiloleal06@gmail.com"));
-        assertEquals("Cartagena", personRepository.findByEmail("camiloleal06@gmail.com").getCity());
+        assertNotNull(personRepository.findPersonByEmail("camiloleal06@gmail.com").get());
+        assertEquals("Cartagena", personRepository.findPersonByEmail("camiloleal06@gmail.com").get().getCity());
     }
 
 }

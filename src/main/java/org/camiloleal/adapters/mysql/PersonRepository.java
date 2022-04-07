@@ -1,4 +1,4 @@
-package org.camiloleal.adapters.bd;
+package org.camiloleal.adapters.mysql;
 
 import org.camiloleal.domain.model.Person;
 import org.springframework.data.jpa.repository.JpaRepository;

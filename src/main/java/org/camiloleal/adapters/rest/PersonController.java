@@ -1,4 +1,4 @@
-package org.camiloleal.adapters.rest.controller;
+package org.camiloleal.adapters.rest;
 
 import lombok.AllArgsConstructor;
 

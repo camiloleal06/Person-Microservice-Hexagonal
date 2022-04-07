@@ -1,4 +1,4 @@
-package org.camiloleal.adapters.bd;
+package org.camiloleal.adapters.mysql;
 
 import lombok.AllArgsConstructor;
 import org.camiloleal.domain.model.Person;

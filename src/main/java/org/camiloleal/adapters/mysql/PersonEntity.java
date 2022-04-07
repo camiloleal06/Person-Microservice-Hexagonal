@@ -1,4 +1,4 @@
-package org.camiloleal.adapters.bd;
+package org.camiloleal.adapters.mysql;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -22,7 +22,7 @@ class PersonPersistenceMysqlTest {
         PersonEntity person = new PersonEntity();
         person.setDni("73207333");
         person.setCity("Cartagena");
-        person.setEmail("camiloleal2022@gmail.com");
+        person.setEmail("camiloleal06@gmail.com");
         person.setFirstName("camilo");
         person.setLastName("Leal");
         person.setAge(35);

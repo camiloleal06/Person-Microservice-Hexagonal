@@ -34,4 +34,15 @@ public class PersonServiceImpl implements PersonInterface {
     public Person getPersonByEmail(String email) {
         return personPersistence.getPersonByEmail(email);
     }
+
+    @Override
+    public void deletePersonById(Integer id) {
+        personPersistence.deletePersonById(id);
+    }
+
+    @Override
+    public Person updatePersonById(Integer id, Person person) {
+        return personPersistence.updatePersonById(id, person);
+    }
+
 }

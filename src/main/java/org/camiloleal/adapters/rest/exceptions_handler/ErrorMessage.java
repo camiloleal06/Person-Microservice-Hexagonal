@@ -6,11 +6,9 @@ public class ErrorMessage {
 
     private final String message;
 
-    private static final String ERROR_MESSAGE = "Ha ocurrido un error contacte con el Administrador";
-
     public ErrorMessage(Exception exception) {
         this.error = exception.getClass().getSimpleName();
-        this.message = ERROR_MESSAGE;
+        this.message = exception.getMessage();
     }
 
     public String getError() {

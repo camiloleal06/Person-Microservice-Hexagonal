@@ -38,4 +38,19 @@ public class PersonPersistenceMysql implements PersonPersistence {
         return personRepository.findPersonByEmail(email)
                 .orElseThrow(() -> new NotFoundException("No existe la persona con email : " + email));
     }
+
+    @Override
+    public void deletePersonById(Integer id) {
+        if (this.getPersonById(id) != null) {
+            personRepository.deleteById(id);
+        }
+    }
+
+    @Override
+    public Person updatePersonById(Integer id, Person person) {
+        if (this.getPersonById(id) != null)
+            return personRepository.save(new PersonEntity(person)).toPerson();
+        else
+            throw new NotFoundException("No existe la Persona con ID : " + id);
+    }
 }

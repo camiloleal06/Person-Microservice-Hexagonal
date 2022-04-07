@@ -48,9 +48,10 @@ public class PersonPersistenceMysql implements PersonPersistence {
 
     @Override
     public Person updatePersonById(Integer id, Person person) {
-        if (this.getPersonById(id) != null)
+        if (this.getPersonById(id) != null) {
             return personRepository.save(new PersonEntity(person)).toPerson();
-        else
+        } else {
             throw new NotFoundException("No existe la Persona con ID : " + id);
+        }
     }
 }

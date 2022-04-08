@@ -1,6 +1,10 @@
 package org.camiloleal.domain.model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Setter
 @Getter
@@ -16,4 +20,5 @@ public class Person {
     private String phone;
     private int age;
     private String city;
+    private String idImage;
 }

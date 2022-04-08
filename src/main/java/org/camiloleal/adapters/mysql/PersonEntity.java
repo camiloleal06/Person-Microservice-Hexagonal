@@ -37,6 +37,8 @@ public class PersonEntity {
     @Column(length = 50)
     private String city;
 
+    private String idImage;
+
     public Person toPerson() {
         Person person = new Person();
         BeanUtils.copyProperties(this, person);

@@ -31,7 +31,7 @@ class PersonControllerTest {
     @Test
     void shouldCallGetPersonById() {
         sut.findPersonById(1);
-        verify(service).getPersonById(2);
+        verify(service).getPersonById(1);
     }
 
     @Test

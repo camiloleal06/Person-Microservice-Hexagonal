@@ -51,7 +51,7 @@ class PersonServiceImplTest {
         assertEquals("73207639", sut.getPersonById(ID).getDni());
         assertEquals("Cartagena", sut.getPersonById(ID).getCity());
 
-        verify(personService, times(4)).getPersonById(ID);
+        verify(personService, times(3)).getPersonById(ID);
     }
 
     @Test

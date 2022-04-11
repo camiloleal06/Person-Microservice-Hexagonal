@@ -1,4 +1,10 @@
 pipeline {
+    agent any
+    
+    tools {
+        maven 'M3'
+    }
+    
     stages {
         stage('Build') {
             steps {
@@ -15,7 +21,7 @@ pipeline {
                 }
             }
         }
-        stage('Deliver') {
+        stage('Deploy') {
             steps {
                 sh './jenkins/scripts/deliver.sh'
             }

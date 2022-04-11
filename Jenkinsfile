@@ -1,10 +1,4 @@
 pipeline {
-    agent {
-        docker {
-            image 'M3'
-             args '-v /root/.m2:/root/.m2'
-        }
-    }
     stages {
         stage('Build') {
             steps {

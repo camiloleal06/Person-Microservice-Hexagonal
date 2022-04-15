@@ -17,4 +17,7 @@ public interface PersonInterface {
     void deletePersonById(Integer id);
 
     Person updatePersonById(Integer id, Person person);
+
+    List<Person> findAllByContainsFistName(String firstName);
+
 }

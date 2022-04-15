@@ -4,6 +4,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 import org.camiloleal.adapters.rest.PersonController;
+import org.camiloleal.adapters.rest.mapper.PersonMapper;
 import org.camiloleal.domain.model.Person;
 import org.camiloleal.ports.in_port.PersonInterface;
 import org.junit.jupiter.api.Test;
@@ -11,10 +12,14 @@ import org.junit.jupiter.api.Test;
 class PersonControllerTest {
 
     PersonInterface service = mock(PersonInterface.class);
-    PersonController sut = new PersonController(service);
+    PersonMapper mapper = mock(PersonMapper.class);
+    PersonController sut = new PersonController(service, mapper);
 
-    Person personDomain = Person.builder().id(1).dni("73207639").city("Cartagena").email("camiloleal@gmail.com")
-            .firstName("camilo").lastName("Leal").age(35).phone("73207639").build();
+    Person personDomain = new Person(); /*
+                                         * = Person.builder().dni("73207639").city("Cartagena").email(
+                                         * "camiloleal@gmail.com")
+                                         * .firstName("camilo").lastName("Leal").age(35).phone("73207639").build();
+                                         */
 
     @Test
     void shouldGetAllPeople() {
@@ -24,7 +29,7 @@ class PersonControllerTest {
 
     @Test
     void shouldCallSavePerson() {
-        sut.createPerson(personDomain);
+        // sut.createPerson(personDomain);
         verify(service).create(personDomain);
     }
 

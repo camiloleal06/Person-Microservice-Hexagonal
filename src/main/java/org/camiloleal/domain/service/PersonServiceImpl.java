@@ -45,4 +45,9 @@ public class PersonServiceImpl implements PersonInterface {
         return personPersistence.updatePersonById(id, person);
     }
 
+    @Override
+    public List<Person> findAllByContainsFistName(String firstName) {
+        return personPersistence.findAllByContainsFistName(firstName);
+    }
+
 }

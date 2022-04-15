@@ -1,19 +1,16 @@
 package org.camiloleal.adapters.rest;
 
-import java.util.List;
-
+import lombok.AllArgsConstructor;
+import org.camiloleal.adapters.rest.dto.PersonDto;
+import org.camiloleal.adapters.rest.mapper.PersonMapper;
 import org.camiloleal.domain.model.Person;
 import org.camiloleal.ports.in_port.PersonInterface;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-import lombok.AllArgsConstructor;
+import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/person")
@@ -21,6 +18,7 @@ import lombok.AllArgsConstructor;
 public class PersonController {
 
     private PersonInterface personInterface;
+    private PersonMapper mapper;
 
     @GetMapping
     public List<Person> findAllPeople() {
@@ -28,13 +26,14 @@ public class PersonController {
     }
 
     @PostMapping
-    public Person createPerson(@RequestBody Person person) {
-        return this.personInterface.create(person);
+    public Person createPerson(@Valid @RequestBody PersonDto person) {
+        return this.personInterface.create(mapper.toPerson(person));
     }
 
     @GetMapping("/{id}")
-    public Person findPersonById(@PathVariable Integer id) {
-        return this.personInterface.getPersonById(id);
+    public ResponseEntity<PersonDto> findPersonById(@PathVariable Integer id) {
+        return new ResponseEntity<>(mapper.toPersonDTO(this.personInterface.getPersonById(id)),
+                HttpStatus.OK);
     }
 
     @GetMapping("/email/{email}")
@@ -50,5 +49,10 @@ public class PersonController {
     @PutMapping("/{id}")
     public Person updatePersonById(@PathVariable Integer id, @RequestBody Person person) {
         return this.personInterface.updatePersonById(id, person);
+    }
+
+    @GetMapping(value = "/api", params = "firstName")
+    public List<Person> findAllPeopleByFirstName(@RequestParam("firstName") String firstName) {
+        return this.personInterface.findAllByContainsFistName(firstName);
     }
 }

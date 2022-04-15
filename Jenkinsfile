@@ -22,9 +22,9 @@ pipeline {
             }
         }
    stage('Analisis SonarQube') {
-    withSonarQubeEnv() {
-      sh "${mvn}/bin/mvn sonar:sonar"
-    }
+     steps {
+                sh 'mvn sonar:sonar'
+            }
   }
  }
   
